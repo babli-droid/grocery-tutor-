@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- Sidebar Menu -->
+  <div id="sidebar">
+    <button id="closeSidebar">✕</button>
+    <h2>Menu</h2>
+    <a href="#" data-tab="dashboard">Dashboard</a>
+    <a href="#" data-tab="products">Products</a>
+    <a href="#" data-tab="orders">Orders</a>
+    <a href="#" data-tab="users">Users</a>
+    <a href="#" data-tab="addresses">Addresses</a>
+    <a href="#" id="logout">Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header>
+      <button id="menuBtn">☰</button>
+      <h1>Admin Dashboard</h1>
+    </header>
+
+    <main>
+      <input type="text" id="searchInput" placeholder="Search...">
+
+      <!-- Dashboard Stats -->
+      <div id="dashboard-tab" class="dashboard-cards">
+        <div class="card">
+          <h3>Total Products</h3>
+          <p id="totalProducts">0</p>
+        </div>
+        <div class="card">
+          <h3>Total Users</h3>
+          <p id="totalUsers">0</p>
+        </div>
+        <div class="card">
+          <h3>Total Orders</h3>
+          <p id="totalOrders">0</p>
+        </div>
+        <div class="card">
+          <h3>Total Revenue</h3>
+          <p id="revenue">₹0</p>
+        </div>
+      </div>
+
+      <!-- Products Table -->
+      <div id="products-tab" style="display:none;">
+        <h2>Products</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody id="products-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Orders Table -->
+      <div id="orders-tab" style="display:none;">
+        <h2>Orders</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Items</th>
+            </tr>
+          </thead>
+          <tbody id="orders-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Users Table -->
+      <div id="users-tab" style="display:none;">
+        <h2>Users</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody id="users-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Addresses Table -->
+      <div id="addresses-tab" style="display:none;">
+        <h2>Addresses</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Street</th>
+              <th>City</th>
+              <th>State</th>
+              <th>Pincode</th>
+            </tr>
+          </thead>
+          <tbody id="addresses-body"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+<script>
+const sidebar = document.getElementById('sidebar');
+const menuBtn = document.getElementById('menuBtn');
+const closeSidebar = document.getElementById('closeSidebar');
+
+// Open sidebar
+menuBtn.addEventListener('click', () => {
+  sidebar.classList.add('active');
+});
+
+// Close sidebar
+closeSidebar.addEventListener('click', () => {
+  sidebar.classList.remove('active');
+});
+
+// Sidebar navigation
+document.querySelectorAll('#sidebar a[data-tab]').forEach(link => {
+  link.addEventListener('click', (e)=>{
+    e.preventDefault();
+    const tab = link.getAttribute('data-tab');
+    document.querySelectorAll('main > div').forEach(div => div.style.display = 'none');
+    document.getElementById(`${tab}-tab`).style.display = 'block';
+    sidebar.classList.remove('active');
+  });
+});
+
+// Logout
+document.getElementById('logout').addEventListener('click', ()=>{
+  localStorage.removeItem('adminToken');
+  window.location.href = 'admin-login.html';
+});
+</script>
+</body>
+</html>

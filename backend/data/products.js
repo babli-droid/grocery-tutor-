@@ -1,0 +1,27 @@
+// backend/data/products.js
+module.exports = [
+  { name: "Nutella",      price: 20,  unit: "kg",    description: "Chocolate spread", image: "nutella.jpg",    category: "Pantry", stock: 50, offer: "None" },
+  { name: "Maggi",        price: 20,  unit: "kg",    description: "Instant noodles",    image: "maggi.jpg",      category: "Pantry", stock: 60, offer: "None" },
+  { name: "Apple",        price: 120, unit: "kg",    description: "Fresh apples",       image: "apple.jpg",      category: "Fruits", stock: 50, offer: "10% off" },
+  { name: "Banana",       price: 60,  unit: "dozen", description: "Fresh bananas",      image: "banana.jpg",     category: "Fruits", stock: 80, offer: "Buy 1 Get 1" },
+  { name: "Orange",       price: 80,  unit: "kg",    description: "Fresh oranges",      image: "orange.jpg",     category: "Fruits", stock: 40, offer: "5% off" },
+  { name: "Mango",        price: 150, unit: "kg",    description: "Seasonal mangoes",   image: "mango.jpg",      category: "Fruits", stock: 0,  offer: "Seasonal Discount" },
+  { name: "Pineapple",    price: 90,  unit: "piece", description: "Juicy pineapple",    image: "pineapple.jpg",  category: "Fruits", stock: 20, offer: "15% off" },
+  { name: "Potato",       price: 30,  unit: "kg",    description: "Fresh potatoes",     image: "potato.jpg",     category: "Vegetables", stock: 120, offer: "20% off" },
+  { name: "Milk",         price: 55,  unit: "litre", description: "Full cream milk",    image: "milk.jpg",       category: "Dairy", stock: 200, offer: "2% off" },
+  { name: "Eggs",         price: 60,  unit: "dozen", description: "Farm fresh eggs",    image: "eggs.jpg",       category: "Dairy", stock: 100, offer: "1 dozen free on 2 dozen" },
+  { name: "Tomato",       price: 40,  unit: "kg",    description: "Red tomatoes",       image: "tomato.jpg",     category: "Vegetables", stock: 70, offer: "10% off" },
+  { name: "Onion",        price: 50,  unit: "kg",    description: "Red onions",         image: "onion.jpg",      category: "Vegetables", stock: 90, offer: "5% off" },
+  { name: "Cheese",       price: 200, unit: "200g",  description: "Cheese block",       image: "cheese.jpg",     category: "Dairy", stock: 30, offer: "10% off" },
+  { name: "Strawberry",   price: 50,  unit: "kg",    description: "Fresh strawberries", image: "strawberry.jpg", category: "Fruits", stock: 10, offer: "5% off" },
+  { name: "Yogurt",       price: 50,  unit: "500g",  description: "Plain yogurt",       image: "yogurt.jpg",     category: "Dairy", stock: 60, offer: "None" },
+  { name: "Bread",        price: 40,  unit: "loaf",  description: "Brown/white loaf",   image: "bread.jpg",      category: "Bakery", stock: 80, offer: "Buy 2 Get 1" },
+  { name: "Butter",       price: 220, unit: "500g",  description: "Creamy butter",      image: "butter.jpg",     category: "Dairy", stock: 25, offer: "10% off" },
+  { name: "Coffee",       price: 300, unit: "250g",  description: "Roasted coffee",     image: "coffee.jpg",     category: "Beverages", stock: 40, offer: "15% off" },
+  { name: "Ice Cream",    price: 120, unit: "tub",   description: "Vanilla tub",        image: "ice_cream.jpg",  category: "Frozen", stock: 50, offer: "Buy 1 Get 1" },
+  { name: "Oil",          price: 180, unit: "litre", description: "Cooking oil",        image: "oil.jpg",        category: "Pantry", stock: 70, offer: "5% off" },
+  { name: "Salt",         price: 20,  unit: "kg",    description: "Table salt",         image: "salt.jpg",       category: "Pantry", stock: 200, offer: "None" },
+  { name: "Sugar",        price: 20,  unit: "kg",    description: "White sugar",        image: "sugar.jpg",      category: "Pantry", stock: 150, offer: "None" },
+  { name: "Tea",          price: 250, unit: "500g",  description: "Tea leaves",         image: "tea.jpg",        category: "Beverages", stock: 40, offer: "12% off" },
+  { name: "Wheat Flour",  price: 45,  unit: "kg",    description: "Whole wheat flour",  image: "wheat_flour.jpg",category: "Pantry", stock: 100, offer: "10% off" }
+];

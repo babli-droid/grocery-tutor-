@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery Store - Home</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: url("images/banners/banner1.jpg") no-repeat center center/cover;
+      height: 100%;
+      color: white;
+      position: relative;
+    }
+
+    /* Overlay to darken background */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg, #00c853, #64dd17);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    /* Main content */
+    main {
+      padding: 120px 20px 120px;
+      text-align: center;
+    }
+
+    .tagline {
+      font-size: 28px;
+      font-weight: 800;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      margin-bottom: 20px;
+    }
+
+    .shop-btn {
+      padding: 14px 28px;
+      background: linear-gradient(90deg, #00e676, #76ff03);
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      transition: transform 0.2s;
+    }
+
+    .shop-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Auth section */
+    .auth-section {
+      margin-top: 40px;
+    }
+
+    .auth-buttons button {
+      padding: 12px 24px;
+      margin: 8px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .signin-btn {
+      background: #fff;
+      color: #000;
+    }
+
+    .signin-btn:hover {
+      background: #ddd;
+    }
+
+    .signup-btn {
+      background: #00e676;
+      color: black;
+    }
+
+    .signup-btn:hover {
+      background: #69f0ae;
+    }
+
+    /* Bottom Bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 40px; /* leave space for footer */
+      left: 0;
+      right: 0;
+      background: #000;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .bottom-bar img {
+      width: 28px;
+      height: 28px;
+      filter: invert(1); /* makes icons white */
+      transition: 0.3s;
+    }
+
+    .bottom-bar img:hover {
+      filter: drop-shadow(0 0 6px #00e676);
+    }
+
+    /* Footer */
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #111;
+      color: grey;
+      font-size: 14px;
+      text-align: center;
+      padding: 8px;
+      z-index: 1001;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <header>
+    Grocery Store
+  </header>
+
+  <main>
+    <div class="tagline">Groceries at Your Doorstep 🚚</div>
+    <a href="products.html"><button class="shop-btn">Shop Now</button></a>
+
+    <!-- Sign In / Register -->
+    <div class="auth-section">
+      <h3>Welcome to Grocery Store</h3>
+      <div class="auth-buttons">
+        <a href="login.html"><button class="signin-btn">Sign In</button></a>
+        <a href="register.html"><button class="signup-btn">Register</button></a>
+      </div>
+    </div>
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Grocery Store. All rights reserved.
+  </footer>
+</body>
+</html>

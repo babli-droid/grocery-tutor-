@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart - Grocery Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== Reset & Basics ===== */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background: #f0f2f5; min-height:100vh; display:flex; flex-direction:column; color:#333; }
+
+    /* ===== HEADER ===== */
+    .header {
+      width: 100%;
+      background: #2c3e50;
+      color: #ecf0f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.8rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header .logo { font-size: 1.5rem; font-weight: bold;}
+    .navbar { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .navbar a { color: #ecf0f1; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+    .navbar a:hover, .navbar a.active { color: #f39c12; }
+
+    /* ===== MAIN CART ===== */
+    main.cart-container {
+      flex: 1;
+      width: 100%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    th { background: #2c3e50; color: #ecf0f1; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; }
+    td { border-bottom: 1px solid #eee; font-size: 0.95rem; color: #555; text-align: center; padding: 10px; }
+    tr:last-child td { border-bottom: none; }
+
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      text-align: center;
+      transition: 0.3s;
+    }
+    input[type="number"]:focus { outline:none; border-color:#f39c12; box-shadow:0 0 8px rgba(243,156,18,0.2); }
+
+    button {
+      padding: 6px 14px;
+      border: none;
+      border-radius: 6px;
+      background: #f39c12;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    button:hover { background:#e67e22; transform:translateY(-2px); }
+
+    /* Cart Summary */
+    .cart-summary {
+      margin-top: 1.5rem;
+      text-align: right;
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      min-width: 300px;
+    }
+    .cart-summary p { font-size: 1.2rem; margin-bottom: 1rem; font-weight: 500; }
+    .cart-summary button { width: 100%; padding: 0.85rem 0; font-size: 1rem; }
+
+    /* Responsive */
+    @media(max-width:768px){
+      table { display:block; overflow-x:auto; }
+      th, td { padding: 12px 8px; font-size: 0.9rem; }
+      .cart-summary { text-align:center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Grocery Store</div>
+  </header>
+
+  <!-- Cart Section -->
+  <main class="cart-container">
+    <h1>Your Shopping Cart</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <!-- Dynamic rows via JS -->
+      </tbody>
+    </table>
+    <div class="cart-summary">
+      <p><strong>Subtotal:</strong> ₹<span id="cart-subtotal">0</span></p>
+      <button id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </main>
+
+  <!-- JS -->
+  <script src="js/cart.js"></script>
+</body>
+</html>

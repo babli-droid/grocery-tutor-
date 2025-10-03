@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wishlist - Grocery Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Basic layout + header like cart.html */
+    *{box-sizing:border-box;margin:0;padding:0;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
+    body{background:#f0f2f5;color:#333;min-height:100vh;display:flex;flex-direction:column}
+    .header{width:100%;background:#2c3e50;color:#ecf0f1;display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1.2rem;position:sticky;top:0;z-index:1000}
+    .logo{font-weight:700;font-size:1.15rem}
+    .navbar{display:flex;gap:1rem}
+    .navbar a{color:#ecf0f1;text-decoration:none;font-weight:500}
+    .navbar a.active{color:#f39c12}
+
+    main.container{flex:1;max-width:1100px;margin:1.5rem auto;padding:0 1rem}
+    h1{color:#2c3e50;text-align:center;margin-bottom:1rem}
+
+    table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.06)}
+    thead th{background:#2c3e50;color:#fff;padding:12px;text-transform:uppercase;font-size:0.9rem}
+    tbody td{padding:12px;border-bottom:1px solid #eee;vertical-align:middle;text-align:center;font-size:0.95rem}
+
+    .product-cell{display:flex;align-items:center;gap:12px;text-align:left}
+    .product-cell img{width:70px;height:70px;object-fit:cover;border-radius:8px;flex-shrink:0}
+    .product-info{display:flex;flex-direction:column}
+
+    .btn{padding:8px 12px;border-radius:8px;border:none;cursor:pointer;font-weight:600}
+    .btn-move{background:#27ae60;color:#fff;margin-right:8px}
+    .btn-remove{background:#e74c3c;color:#fff}
+
+    .summary{margin-top:14px;text-align:right}
+    .summary p{font-weight:600}
+
+    /* bottom nav (pinned) */
+    .bottom-bar{position:fixed;bottom:0;left:0;width:100%;background:#2c3e50;display:flex;justify-content:space-around;align-items:center;padding:9px 0;z-index:1000}
+    .bottom-bar a img{width:26px;height:26px}
+
+    /* small screen tweaks */
+    @media (max-width:720px){
+      .product-cell img{width:56px;height:56px}
+      .navbar{gap:0.6rem}
+      thead th, tbody td{padding:10px}
+      .btn{padding:7px 10px;font-size:0.9rem}
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <h1>Your Wishlist</h1>
+
+    <table aria-label="Wishlist table">
+      <thead>
+        <tr>
+          <th style="text-align:left">Product</th>
+          <th>Price</th>
+          <th style="width:220px">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="wishlist-items">
+        <!-- JS will inject rows here -->
+      </tbody>
+    </table>
+
+    <div class="summary">
+      <p>Total items: <span id="wishlist-count">0</span></p>
+    </div>
+  </main>
+
+  <div class="bottom-bar">
+    <a href="index.html"><img src="images/icons/home.png" alt="Home"></a>
+    <a href="orders.html"><img src="images/icons/orders.png" alt="Orders"></a>
+    <a href="cart.html"><img src="images/icons/shopping_cart.png" alt="Cart"></a>
+    <a href="profile.html"><img src="images/icons/person.png" alt="Profile"></a>
+    <a href="wishlist.html"><img src="images/icons/wishlist.png" alt="Wishlist"></a>
+  </div>
+
+  <script src="js/wishlist.js"></script>
+</body>
+</html>

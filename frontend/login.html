@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Grocery Store</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f8f9fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    .header {
+      background: #2c3e50;
+      padding: 1rem;
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .navbar a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .navbar a:hover,
+    .navbar a.active {
+      color: #f39c12;
+    }
+
+    /* Auth container */
+    .auth-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 3rem 1rem;
+    }
+
+    /* Auth box */
+    .auth-box {
+      background: #fff;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      margin-top: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .auth-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    /* Auth title */
+    .auth-title {
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    /* Form */
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .form-group input:focus {
+      border-color: #f39c12;
+      outline: none;
+      box-shadow: 0 0 6px rgba(243, 156, 18, 0.4);
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 0.9rem;
+      background: #f39c12;
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-primary:hover {
+      background: #e67e22;
+    }
+
+    .auth-text {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .auth-text .link {
+      color: #f39c12;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .auth-text .link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background: #2c3e50;
+      color: #ecf0f1;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+ <header class="header">
+  <nav class="navbar">
+    <h2 style="color: white;">Grocery-Store</h2>
+  </nav>
+</header>
+
+  <!-- Login Section -->
+  <main class="auth-container">
+    <div class="auth-box">
+      <h1 class="auth-title">Login</h1>
+      <form class="auth-form" id="login-form">
+        <div class="form-group">
+          <input type="email" id="login-email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+          <input type="password" id="login-password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+      <p class="auth-text">
+        Don’t have an account?
+        <a href="register.html" class="link">Register here</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Grocery Store. All rights reserved.</p>
+  </footer>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
+
